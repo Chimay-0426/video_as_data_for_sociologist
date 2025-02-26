@@ -1,5 +1,34 @@
-# Easy Crash Course of Analyzing Video as Data ----Preliminary Application for a sociological question
+# Easy Crash Course of Analyzing Video as Data ----Preliminary Application for a sociological question　（工事中）
 
 このgithubは2月16-18日の日程行われた計算社会学会@筑波大学（CSSJ2025）で私が行ったポスター発表で用いた分析のコードのチュートリアルです。
 
 事務局に提出した論文では大きく以下の通り分析を行いました。
+
+①　Youtubeのネット討論番組について
+-自動文字起こしと話者識別を兼ねたパイプラインに音声感情認識（SER）を発言のチャンクごとに識別しその分布を可視化しました。
+スクリプト：
+auto_pipeline_SER.py
+
+概要 :
+このスクリプトは、音声ファイルから以下の処理を自動実施します。
+
+処理の手順：
+（文字起こし＆話者ダイアリゼーション）pyannote のモデルを用いて話者の切り分け（ダイアリゼーション）を実施しその区間ごとに音声を切り出し、Whisper を用いて音声ファイルから文字起こしを実施。
+
+（音声感情認識）上の文字起こし・話者識別後のデータを受け取り、torchaudioで対象区間ごとに音声全体を読み込み、感情認識を実施（Hugging Face の日本語対応モデルを利用）し、各セグメントの感情スコアの詳細（JSON形式）を含む結果を取得する。
+感情認識結果の CSV 出力：
+感情認識結果も10分ごとにチャンクとして追記保存し、全体の結果もまとめて CSV ファイルに出力（処理がセッションの関係で途中で止まってしまったときのよう）
+
+使い方：
+1)必要なライブラリ（whisper, torchaudio, pyannote.audio, transformers など）のインストールする
+2)your_directory や your_token、使用するモデル名などのパラメータの設定する
+3)対象の音声ファイル（audio.wav）を所定のディレクトリに配置する
+4)スクリプトを実行すると、処理結果が指定ディレクトリ内に CSV ファイルとして保存される
+
+問題点；
+・精度がイマイチでないので用いているモデルの検討やfine tuningを考えたい。wav2vec2-xlsr-japanese-speech-emotion-recognitionを現状書いてますが、他によりモデルがあったら良い。
+
+可視化については、できたcsvの元matplotlibなどで適宜行なってください。
+
+
+
