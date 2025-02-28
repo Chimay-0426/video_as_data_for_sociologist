@@ -1,0 +1,13 @@
+setuptools==59.5.0
+numpy
+torch
+torchvision
+openai-whisper
+pyannote.audio
+soundfile
+speechbrain==0.5.16 
+transformers
+deepface
+hdbscan
+moviepy
+cv2

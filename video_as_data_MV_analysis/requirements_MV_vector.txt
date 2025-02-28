@@ -1,0 +1,9 @@
+
+transformers 
+accelerate
+transformers
+torch
+yt_dlp
+#以下scene/frameを切り取るライブラリ
+pyav
+scenedetect 
