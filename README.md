@@ -181,6 +181,13 @@
 
 ---
 
+## 3. 参考文献
+
+- Agarwal, A., Priyadarshi, P., Sinha, S., Gupta, S., Jangra, H., Kumaraguru, P., & Garimella, K. (2024). Television discourse decoded: Comprehensive multimodal analytics at scale. In *Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining* (pp. 4752–4763). [https://doi.org/10.1145/3637528.3671532](https://doi.org/10.1145/3637528.3671532)  
+- Fields, E. E. (1988). Qualitative content analysis of television news: Systematic techniques. *Qualitative Sociology, 11(3)*, 183–193. [https://doi.org/10.1007/BF00988954](https://doi.org/10.1007/BF00988954)  
+- Pinto, G. (2024). Political talk show videos as data. SSRN. [https://ssrn.com/abstract=4976364](https://ssrn.com/abstract=4976364)
+
+---
 ## 最後に
 
 - **本リポジトリ**は、上記のような **音声＋映像** の分析処理例を示すコード集です。  
